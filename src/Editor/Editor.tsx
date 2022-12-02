@@ -4,6 +4,8 @@ import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 
+import "./editor.css"
+
 const initialConfig: ComponentProps<typeof LexicalComposer>["initialConfig"] = {
   namespace: "MyEditor",
   onError: (error) => console.error(error),
@@ -11,12 +13,14 @@ const initialConfig: ComponentProps<typeof LexicalComposer>["initialConfig"] = {
 
 export const Editor: FC = () => {
   return (
-    <LexicalComposer initialConfig={initialConfig}>
-      <RichTextPlugin
-        contentEditable={<ContentEditable />}
-        placeholder={<div>Hello Lexical</div>}
-        ErrorBoundary={LexicalErrorBoundary}
-      />
-    </LexicalComposer>
+    <div>
+      <LexicalComposer initialConfig={initialConfig}>
+        <RichTextPlugin
+          contentEditable={<ContentEditable className="editor-content-editable" />}
+          placeholder={<div>Hello Lexical</div>}
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+      </LexicalComposer>
+    </div>
   );
 };

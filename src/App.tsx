@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
+import { Editor } from "./Editor/Editor";
 
 function App() {
   return (
     <div>
-      Hello Lexical
+      <Editor />
     </div>
   );
 }
